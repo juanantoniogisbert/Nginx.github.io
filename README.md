@@ -1,37 +1,74 @@
-## Welcome to GitHub Pages
+## SITIO 1
 
-You can use the [editor on GitHub](https://github.com/juanantoniogisbert/Nginx.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+NGINX, es un famoso software de servidor web de código abierto. En su versión inicial, funcionaba en servidores web HTTP. Sin embargo, hoy en día también sirve como proxy inverso, balanceador de carga HTTP y proxy de correo electrónico para IMAP, POP3 y SMTP. Fue lanzado oficialmente en octubre del 2004. El creador del software, Igor Sysoev, comenzó su proyecto en el 2002 como un intento de solucionar el problema C10k.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Para instalar nginx solamente tendremos que hacer el siguiente comando
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+$ sudo apt-get install nginx
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Como hemos echo en la parctica de [apachae](https://juanantoniogisbert.github.io/Apache.github.io/) crearemos un fichero index.php en la carpeta `/var/www/sitiophp`
 
-### Jekyll Themes
+### Estar publicada en el puerto 82
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/juanantoniogisbert/Nginx.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+En el fichero default de nginx cambiaremos el puerto.
 
-### Support or Contact
+![Alt text](images/cap1.png?raw=true "Title")
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### El directorio donde se encuentra el contenido del sitio será /var/www/sitioPhp
+
+Ahora indicaremos nuestro directorio
+
+![Alt text](images/cap2.png?raw=true "Title")
+
+
+### Los logs se sitúan en el directorio /etc/logs/sitioPhp
+
+Aqui en el fichero `nginx.conf` le indicaremos la ruta de nuestros logs.
+
+![Alt text](images/cap3.png?raw=true "Title")
+
+
+### Debe tener activada la compresión de ficheros que superen los 80kb
+
+Seguiremos editando el mismo fichero y activamos la compresion y la capacidad.
+
+![Alt text](images/cap4.png?raw=true "Title")
+
+### Dispone de una página que se mostrará al acceder a una ruta que no exista.
+Esta página (404.html) estará situada en /var/www/errores
+
+Primeramente crearemos en /var/www el directorio errores, dentro pondremos nuestra pagina de error
+
+![Alt text](images/cap5.png?raw=true "Title")
+
+
+### No permita el acceso al contenido de nuestro servidor siempre que en el path
+del contenido a obtener se encuentre la palabra private
+
+![Alt text](images/cap6.png?raw=true "Title")
+![Alt text](images/cap7.png?raw=true "Title")
+
+
+## SITIO 2
+
+### Estar publicada en el puerto 82
+
+Hacemos el mismo proceso que en el sitio 1 pero poniendo el puerto 82.
+
+![Alt text](images/cap8.png?raw=true "Title")
+
+### El directorio donde se encuentra el contenido del sitio será /var/www/sitioNode
+
+![Alt text](images/cap9.png?raw=true "Title")
+
+### Los logs se sitúan en el directorio /etc/logs/sitioNode
+
+![Alt text](images/cap10.png?raw=true "Title")
+
+
+### Dispone de una página que se mostrará al acceder a una ruta que no exista.
+Esta página (404.html) estará situada en /var/www/errores
+
+![Alt text](images/cap11.png?raw=true "Title")
