@@ -71,8 +71,5 @@ Hacemos el mismo proceso que en el sitio 1 pero poniendo el puerto 82.
 ### Dispone de una página que se mostrará al acceder a una ruta que no exista.
 Esta página (404.html) estará situada en /var/www/errores
 
-<<<<<<< HEAD
 ![Alt text](images/cap11.png?raw=true "Title")
-=======
 ![Alt text](images/cap11.png?raw=true "Title")
->>>>>>> 5b48131308eb6e1a365e970837478033b5a7ea15
